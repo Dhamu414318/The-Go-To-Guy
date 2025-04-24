@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudrantar | Brand Identity Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Global Styles */
+:root {
+    --primary-color: #00a651;
+    --dark-color: #121212;
+    --darker-color: #0a0a0a;
+    --light-color: #f8f9fa;
+    --gray-color: #6c757d;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    border-radius: 0;
+    padding: 10px 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-success:hover {
+    background-color: #008c44;
+    border-color: #008c44;
+}
+
+.btn-outline-dark {
+    color: #333;
+    border-color: #333;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-outline-light {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--darker-color);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    text-align: center;
+}
+
+.logo-animation {
+    animation: pulse 1.5s infinite;
+}
+
+.logo-path {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: dash 2s linear infinite;
+}
+
+.logo-circle {
+    animation: fade 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes dash {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.loading-text {
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    letter-spacing: 3px;
+}
+
+.dot {
+    animation: dot-animation 1.5s infinite;
+    opacity: 0;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes dot-animation {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 10px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    transition: var(--transition);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    padding: 10px 15px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.navbar-dark .navbar-nav .nav-link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover:after,
+.navbar-dark .navbar-nav .nav-link.active:after {
+    width: 30px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Important to hide overflow from flipped image */
+  z-index: 1;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.463), rgba(0, 0, 0, 0.397)), url('images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scaleX(-1); /* This flips the image horizontally */
+  z-index: -1;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.tagline {
+    display: inline-block;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.hero-section h2 {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.hero-image {
+    position: relative;
+    z-index: 1;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.scroll-down a {
+    display: block;
+    width: 30px;
+    height: 50px;
+    position: relative;
+}
+
+.scroll-down span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    animation: scroll-down 2s infinite;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.scroll-down span:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.scroll-down span:nth-of-type(2) {
+    top: 16px;
+    animation-delay: 0.15s;
+}
+
+.scroll-down span:nth-of-type(3) {
+    top: 32px;
+    animation-delay: 0.3s;
+}
+
+@keyframes scroll-down {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Services Section */
+.services-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.service-box {
+    padding: 30px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-box:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-box:hover:before {
+    height: 100%;
+}
+
+.service-box h3 {
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.service-box h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.service-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.service-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-list li:before {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: var(--primary-color);
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+}
+
+.service-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.service-link i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.service-link:hover i {
+    transform: translateX(5px);
+}
+
+.green-divider-full {
+    height: 5px;
+    background-color: var(--primary-color);
+    margin-top: 50px;
+}
+
+/* Brand Identity Section */
+.brand-identity-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.green-divider {
+    width: 100px;
+    height: 5px;
+    background-color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.brand-process {
+    margin: 40px 0;
+}
+
+.brand-element {
+    width: 60px;
+    height: 60px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-color);
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.brand-element:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.plus-sign {
+    margin: 0 15px;
+    font-size: 24px;
+    color: var(--gray-color);
+}
+
+.arrow-right {
+    font-size: 24px;
+    color: var(--gray-color);
+}
+
+.final-logo {
+    max-width: 200px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.final-logo:hover {
+    transform: scale(1.05);
+}
+
+.section-title {
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    color: var(--gray-color);
+    line-height: 1.8;
+}
+
+/* Diversified Products Section */
+.diversified-products-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.product-name {
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-top: 20px;
+}
+
+.product-tagline {
+    color: var(--gray-color);
+    margin-bottom: 0px;
+}
+
+/* MScan Section */
+.mscan-section {
+    background-color: white;
+    padding: 80px 0;
+}
+
+/* DocBins Section */
+.docbins-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+/* Websites Section */
+.websites-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 80px 0;
+}
+
+.websites-section .section-title {
+    color: white;
+}
+
+.websites-section .section-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.website-mockup {
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.website-mockup:hover {
+  transform: translateY(-10px);
+}
+
+/* Add a subtle glow effect */
+.website-mockup::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 10%;
+  width: 80%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  filter: blur(15px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+
+/* Portfolio Section */
+.portfolio-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.portfolio-filter {
+    margin-bottom: 30px;
+}
+
+.btn-filter {
+    background: none;
+    border: none;
+    color: var(--gray-color);
+    font-weight: 500;
+    padding: 8px 15px;
+    margin: 0 5px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.btn-filter:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.btn-filter:hover, .btn-filter.active {
+    color: var(--primary-color);
+}
+
+.btn-filter:hover:after, .btn-filter.active:after {
+    width: 30px;
+}
+
+.portfolio-items {
+    margin-top: 30px;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-box img {
+    transition: var(--transition);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.portfolio-info {
+    text-align: center;
+    color: white;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.portfolio-info h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.portfolio-info p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-box:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-box:hover .portfolio-info {
+    transform: translateY(0);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.contact-item h5 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    color: var(--gray-color);
+    margin-bottom: 0;
+}
+
+.contact-item a {
+    color: var(--gray-color);
+    transition: var(--transition);
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    color: var(--dark-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-control {
+    height: 50px;
+    border-radius: 0;
+    border: 1px solid #eee;
+    padding: 10px 15px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-heading:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.footer-newsletter .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+}
+
+.footer-newsletter .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-divider {
+    margin: 30px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-bottom-links li {
+    margin-left: 20px;
+}
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.footer-bottom-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .mobile-nav .nav-item {
+            color: #495057;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .mobile-nav .nav-item.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Hide on larger screens */
+        @media (min-width: 768px) { /* Example breakpoint */
+            .mobile-nav {
+                display: none;
+            }
+        }
+
+        /* Example Styles - Remove or replace with your own */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+       
+        /* Example Navbar (replace with your actual navbar) */
+        .navbar {
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Hide on smaller screens */
+        @media (max-width: 767px) {
+            .navbar {
+                display: none;
+            }
+        }
+
+/* Pagination Indicator */
+.pagination-indicator {
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.restart-btn {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.restart-btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--dark-color);
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* Cursor Animation */
+.cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: transform 0.2s ease;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transition: transform 0.6s ease, width 0.3s ease, height 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        border-radius: 5px;
+    }
+    
+    .hero-section {
+        text-align: center;
+    }
+    
+    .hero-image {
+        margin-top: 50px;
+    }
+    
+    .service-box {
+        margin-bottom: 30px;
+    }
+    
+    .brand-process {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .brand-element, .plus-sign, .arrow-right {
+        margin: 10px 0;
+    }
+    
+    .websites-section {
+        text-align: center;
+    }
+    
+    .website-mockup {
+        margin-top: 50px;
+    }
+    
+    .contact-info {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section h1 {
+        font-size: 32px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+    
+    .footer-heading:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-bottom-links {
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .footer-bottom-links li:first-child {
+        margin-left: 0;
+    }
+    
+    .cursor, .cursor-follower {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section h1 {
+        font-size: 28px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .portfolio-filter .btn-filter {
+        margin-bottom: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="logo-animation" width="50" height="50" viewBox="0 0 50 50">
+                <path class="logo-path" d="M25,5 L5,25 L25,45 L45,25 L25,5" fill="none" stroke="#00a651" stroke-width="2"></path>
+                <circle class="logo-circle" cx="25" cy="25" r="10" fill="#00a651" opacity="0"></circle>
+            </svg>
+            <p class="loading-text">Loading<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="width:200px;">
+                <img src="images/brand-logo.png " alt="Mudrantar Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#brands">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<br>
+<br>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="hero-content">
+                        <div class="d-flex align-items-start">
+                            <!-- Logo Column -->
+                            <div class="me-5">
+                                <img src="images/Lion-logo.png"
+                                     alt="Brand Logo" class="img-fluid" style="max-width: 280px; margin-top: -100px; margin-left: -120px;">
+                            </div>
+                            <!-- Text Column -->
+                            <div style="margin-left:-100px;">
+                                <div class="tagline" style="font-weight: 700; color: white; font-size: 1.7rem;">
+                                    The Go-To Guy!
+                                </div>
+                                <div style="font-size: 1rem; color: #00a651; margin-bottom: 0.5rem;">
+                                    Helping Build Brands
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Main Content Below -->
+                        <div style="margin-top: 40px;">
+                            <h1 class="display-4 mb-4"
+                                style="font-weight: bold; font-size:32px; width:500px; color: #d3d3d3;">
+                                Created Distinct Identities for A Single Binational Brand
+                            </h1>
+                            <img src="images/brand-logo.png " alt="Mudrantar Logo" class="img-fluid">
+                            <div class="mt-5">
+                                <a href="#portfolio" class="btn btn-outline-light me-3">View Portfolio</a>
+                                <a href="#contact" class="btn btn-success">Get in Touch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+       
+        
+        <div class="scroll-down">
+            <a href="#services">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="800">
+                    <div class="service-box">
+                        <h3>Branding</h3>
+                        <ul class="service-list">
+                            <li>Logo Design & Visual Identity</li>
+                            <li>Brand Strategy & Positioning</li>
+                            <li>Brand Guidelines & Standards</li>
+                            <li>Rebranding & Brand Refresh</li>
+                            <li>Brand Messaging & Voice</li>
+                        </ul>
+                        <a href="https://www.behance.net/search/projects?search=branding" target="_blank" class="service-link">View Examples <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="service-box">
+                        <h3>Digital</h3>
+                        <ul class="service-list">
+                            <li>Website Design & Development</li>
+                            <li>Mobile App UI/UX Design</li>
+                            <li>Social Media Branding</li>
+                            <li>Digital Marketing Assets</li>
+                            <li>User Experience Design</li>
+                        </ul>
+                        <a href="https://dribbble.com/tags/digital" target="_blank" class="service-link">View Examples <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="service-box">
+                        <h3>Technology</h3>
+                        <ul class="service-list">
+                            <li>Custom Web Development</li>
+                            <li>E-commerce Solutions</li>
+                            <li>CMS Implementation</li>
+                            <li>API Integration</li>
+                            <li>Technical Consultancy</li>
+                        </ul>
+                        <a href="https://www.awwwards.com/websites/technology/" target="_blank" class="service-link">View Examples <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="green-divider-full"></div>
+    </section>
+
+    <!-- Brand Identity Section -->
+    <section id="brands" class="brand-identity-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="brand-process">
+                        <div class="d-flex align-items-center justify-content-center flex-wrap">
+                            <div class="brand-element">M</div>
+                            <div class="plus-sign">+</div>
+                            <div class="brand-element"><i class="fas fa-chart-line"></i></div>
+                            <div class="arrow-right mx-4"><i class="fas fa-long-arrow-alt-right"></i></div>
+                            <div class="final-logo">
+                                <img src="
+                                data:image/png;base64,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
+                                " alt="Mudrantar Logo" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <h2 class="section-title">Mudrantar</h2>
+                    <p class="section-subtitle">Possibilities Beyond Documents</p>
+                    <p class="section-description">
+                        We created a distinctive visual identity that represents the brand's commitment to innovation and excellence in document management solutions. The logo combines the letter 'M' with a chart icon, symbolizing data-driven document solutions.
+                    </p>
+                    <a href="https://www.behance.net/gallery/96061971/Mudrantar-Brand-Identity" target="_blank" class="btn btn-outline-dark mt-3">View Case Study</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Identity For Diversified Products -->
+    <section class="diversified-products-section py-5">
+        <div class="container text-center">
+            <h2 class="section-title mb-4" data-aos="fade-up" data-aos-duration="800">Brand Identity For Diversified Products</h2>
+            <div class="green-divider mx-auto mb-5" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200"></div>
+            
+            <div class="product-process" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <div class="d-flex align-items-center justify-content-center flex-wrap">
+                    <div class="brand-element"><i class="fas fa-book"></i></div>
+                    <div class="plus-sign">+</div>
+                    <div class="brand-element"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="arrow-right mx-4"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="final-logo">
+                        <img src="
+                        data:image/png;base64,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
+                        " alt="Mudra Logo" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                <h3 class="product-name">mudra</h3>
+                <p class="product-tagline">Solutions to Digital Needs</p>
+                <a href="https://dribbble.com/shots/15233426-Mudra-Digital-Solutions-Brand-Identity" target="_blank" class="btn btn-outline-dark mt-3">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MScan Section -->
+    <section class="mscan-section py-5">
+        <div class="container text-center">
+            <div class="green-divider mx-auto mb-5" data-aos="fade-up" data-aos-duration="800"></div>
+            
+            <div class="product-process" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="d-flex align-items-center justify-content-center flex-wrap">
+                    <div class="brand-element">M</div>
+                    <div class="plus-sign">+</div>
+                    <div class="brand-element">Mscan</div>
+                    <div class="arrow-right mx-4"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="final-logo">
+                        <img src="mscan-logo.png" alt="MScan Logo" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <h3 class="product-name">MScan</h3>
+                <p class="product-tagline">Efficient Data Entry Solutions Simplified</p>
+                <a href="https://www.behance.net/gallery/96062111/MScan-Brand-Identity" target="_blank" class="btn btn-outline-dark mt-3">Explore MScan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DocBins Section -->
+    <section class="docbins-section py-5">
+        <div class="container text-center">
+            <div class="green-divider mx-auto mb-5" data-aos="fade-up" data-aos-duration="800"></div>
+            
+            <div class="product-process" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="d-flex align-items-center justify-content-center flex-wrap">
+                    <div class="brand-element"><i class="fas fa-bullseye"></i></div>
+                    <div class="plus-sign">+</div>
+                    <div class="brand-element"><i class="fas fa-file-alt"></i></div>
+                    <div class="arrow-right mx-4"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="final-logo">
+                        <img src="docbins-logo.png" alt="DocBins Logo" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <h3 class="product-name">DocBins</h3>
+                <p class="product-tagline">Document Management Simplified</p>
+                <a href="https://dribbble.com/shots/15233511-DocBins-Document-Management-Brand" target="_blank" class="btn btn-outline-dark mt-3">View DocBins</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Websites Section -->
+    <section class="websites-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="section-title">Tailored Websites</h2>
+                    <p class="section-description">
+                        We design and develop responsive websites that showcase your brand identity and provide an exceptional user experience across all devices. Our websites are built with the latest technologies and optimized for performance and SEO.
+                    </p>
+                    <div class="mt-4">
+                        <a href="https://www.awwwards.com/websites/responsive-design/" target="_blank" class="btn btn-light me-3">View Examples</a>
+                        <a href="#contact" class="btn btn-outline-light">Request a Quote</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="website-mockup">
+                        <img src="images/mockup.png" alt="Website Mockup" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="section-title mb-4">Get In Touch</h2>
+                    <p class="section-description mb-4">
+                        Ready to start your project? Contact us today for a free consultation and quote. We'll help you bring your brand vision to life.
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Location</h5>
+                                <p>123 Design Street, Creative City, 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p><a href="mailto:info@mudrantar.com">info@mudrantar.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h5>Phone</h5>
+                                <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links mt-4">
+                        <a href="https://www.behance.net/" target="_blank" class="social-link"><i class="fab fa-behance"></i></a>
+                        <a href="https://dribbble.com/" target="_blank" class="social-link"><i class="fab fa-dribbble"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="mudrantar-logo-white.png" alt="Mudrantar Logo" height="40" class="mb-3">
+                    <p class="footer-text">
+                        We create distinctive brand identities and digital experiences that help businesses stand out in the market.
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="footer-heading">Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="footer-heading">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Branding & Identity</a></li>
+                        <li><a href="#">Web Design & Development</a></li>
+                        <li><a href="#">Mobile App Design</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-text">Subscribe to our newsletter for the latest updates.</p>
+                    <form class="footer-newsletter">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-success" type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="copyright">&copy; 2025 Mudrantar. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="footer-bottom-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <a href="#" class="nav-item"><i class="fas fa-chevron-left"></i></a>
+        <a href="#home" class="nav-item active"><i class="fas fa-home"></i></a>
+        <a href="#portfolio" class="nav-item"><i class="fas fa-th"></i></a>
+        <a href="#contact" class="nav-item"><i class="fas fa-search"></i></a>
+        <a href="#" class="nav-item" id="mobileMenuToggle"><i class="fas fa-bars"></i></a>
+    </div>
+
+    <!-- Pagination Indicator -->
+    <div class="pagination-indicator">
+        <span class="current-page">1</span>/<span class="total-pages">2</span>
+        <button class="btn btn-sm btn-outline-light ms-3 restart-btn">
+            <i class="fas fa-redo"></i> Restart
+        </button>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Cursor Animation -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+       // Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Preloader
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        setTimeout(function() {
+            preloader.style.opacity = '0';
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 500);
+        }, 1500);
+    });
+    
+    // Initialize AOS Animation
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            mirror: false
+        });
+    }
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('active');
+        } else {
+            backToTopButton.classList.remove('active');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Mobile navigation active state
+    const mobileNavItems = document.querySelectorAll('.mobile-nav .nav-item');
+    
+        mobileNavItems.forEach(item => {
+            item.addEventListener('click', function() {
+                mobileNavItems.forEach(navItem => {
+                    navItem.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    
+        // Mobile menu toggle (example - adapt to your actual menu)
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                //  Example:  Toggles a class on a menu element
+                // document.querySelector('.navbar-collapse').classList.toggle('show');
+                alert('Mobile menu toggle clicked!'); // Replace with your actual menu toggle logic
+            });
+        }
+    // Restart button functionality
+    const restartBtn = document.querySelector('.restart-btn');
+    
+    if (restartBtn) {
+        restartBtn.addEventListener('click', function() {
+            simulateLoading();
+            setTimeout(function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'auto'
+                });
+                location.reload();
+            }, 1000);
+        });
+    }
+    
+    // Pagination functionality
+    let currentPage = 1;
+    const totalPages = 2;
+    const currentPageElement = document.querySelector('.current-page');
+    const nextBtn = document.querySelector('.mobile-nav .nav-item:nth-child(2)');
+    const prevBtn = document.querySelector('.mobile-nav .nav-item:first-child');
+    
+    if (nextBtn && prevBtn && currentPageElement) {
+        nextBtn.addEventListener('click', function() {
+            if (currentPage < totalPages) {
+                simulateLoading();
+                setTimeout(function() {
+                    currentPage++;
+                    currentPageElement.textContent = currentPage;
+                    // Here you would add logic to show the next page content
+                    document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
+                }, 1000);
+            }
+        });
+        
+        prevBtn.addEventListener('click', function() {
+            if (currentPage > 1) {
+                simulateLoading();
+                setTimeout(function() {
+                    currentPage--;
+                    currentPageElement.textContent = currentPage;
+                    // Here you would add logic to show the previous page content
+                    document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+                }, 1000);
+            }
+        });
+    }
+    
+    // Portfolio filter
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get filter value
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Filter portfolio items
+            portfolioItems.forEach(item => {
+                if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+    
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (name && email && message) {
+                // Show success message (in a real application, you would send this data to a server)
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    }
+    
+    // Custom cursor animation
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    
+    if (cursor && cursorFollower) {
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.opacity = '1';
+            cursorFollower.style.opacity = '1';
+            
+            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+            
+            setTimeout(() => {
+                cursorFollower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+            }, 100);
+        });
+        
+        document.addEventListener('mouseout', function() {
+            cursor.style.opacity = '0';
+            cursorFollower.style.opacity = '0';
+        });
+        
+        // Change cursor size on hover over links and buttons
+        const links = document.querySelectorAll('a, button, .brand-element, .final-logo');
+        
+        links.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                cursor.style.transform = 'scale(1.5)';
+                cursorFollower.style.width = '40px';
+                cursorFollower.style.height = '40px';
+                cursorFollower.style.borderColor = 'rgba(0, 166, 81, 0.5)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                cursor.style.transform = 'scale(1)';
+                cursorFollower.style.width = '30px';
+                cursorFollower.style.height = '30px';
+                cursorFollower.style.borderColor = 'rgba(0, 166, 81, 1)';
+            });
+        });
+    }
+    
+    // Animation for brand elements
+    const brandElements = document.querySelectorAll('.brand-element, .final-logo');
+    
+    brandElements.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            if (typeof gsap !== 'undefined') {
+                gsap.to(this, {
+                    scale: 1.1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            }
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            if (typeof gsap !== 'undefined') {
+                gsap.to(this, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            }
+        });
+    });
+});
+
+// Function to simulate page loading
+function simulateLoading() {
+    const loadingOverlay = document.createElement('div');
+    loadingOverlay.className = 'loading-overlay';
+    loadingOverlay.innerHTML = `
+        <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    `;
+    
+    document.body.appendChild(loadingOverlay);
+    
+    setTimeout(() => {
+        loadingOverlay.style.opacity = '0';
+        setTimeout(() => {
+            document.body.removeChild(loadingOverlay);
+        }, 500);
+    }, 1500);
+}
+
+// Add loading overlay styles
+const loadingStyles = document.createElement('style');
+loadingStyles.textContent = `
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+    }
+`;
+document.head.appendChild(loadingStyles);
+
+// Parallax effect for hero section
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const heroSection = document.querySelector('.hero-section');
+    
+    if (heroSection) {
+        heroSection.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+    }
+});
+
+
+    </script>
+</body>
+</html>
